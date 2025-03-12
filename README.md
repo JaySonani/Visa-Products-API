@@ -12,7 +12,7 @@ We're excited to see your skills in action! This challenge is designed to showca
 
 ## 🚀 The Challenge
 
-At sherpa°, we help travelers find and purchase the visas they need. Your mission is to build a **Products Application** with both client and server components that allows users to:
+At sherpa°, we help travelers find and purchase the visas they need. Your mission is to build a **Products Application** with both client and server components that allows users to perform `at least one` of the following tasks:
 
 - Browse all visa products (with pagination and filtering)
 - View individual product details
@@ -45,16 +45,20 @@ npx nx run server:serve  # For the backend
 Need help? Contact us immediately if you encounter any setup issues!
 
 ## 🛠️ Tech Stack
+This project mimiks our own codebase, so it gives you a preview of what you can expect joining the team!
+However we don't expect you to be fully familiar with the specific frameworks and tools. 
 
-This repository contains an [Nx monorepo](https://nx.dev) with:
-
+We have an [Nx monorepo](https://nx.dev) with:
 1. An Angular application
 2. A NestJS application 
 3. A CSV dataset example of visa products
 
-Feel free to use these or swap them for your preferred frameworks. Just ensure you're working with TypeScript. The setup is intentionally minimal to give you creative freedom without having to start from scratch.
+Feel free to use these or swap them for your preferred frameworks. 
 
-This project mimiks our own codebase, so it gives you a preview of what you can expect joining the team!
+Just ensure you're working with TypeScript which is the only hard requirement. 
+
+The setup is intentionally minimal to give you creative freedom without having to start from scratch.
+
 
 <details>
 <summary>See our complete Techstack</summary>
@@ -161,6 +165,7 @@ Vietnam,Tourist,25,30,Single,5
 Vietnam,Business,50,180,Multiple,12
 Vietnam,Student,150,730,Multiple,20
 ```
+
 ## ✅ Assessment Criteria
 
 Rather than looking for a complete implementation, we're evaluating your approach across these key areas and don't expect you to excell in every single one but rather focus on very few that you want to impress us with:
@@ -188,6 +193,6 @@ Don't worry about implementing:
 - Deployment configurations
 - Extensive wireframes/prototypes
 
-> **A note on AI:** Feel free to use AI tools if helpful—we do too! Just be prepared to discuss what worked, what didn't, and your thoughts on AI's role in development.
+> **A note on AI:** Feel free to use AI tools if helpful, we do too! Just be prepared to discuss what worked, what didn't, and your thoughts on AI's role in development.
 
 We're excited to see your approach and discuss your solution. Good luck!
