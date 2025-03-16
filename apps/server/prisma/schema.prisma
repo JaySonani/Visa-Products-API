@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model VisaProducts {
+  id              Int       @id @default(autoincrement())
+  country         String    @db.VarChar(255)
+  visaType        VisaType
+  priceUSD        Int
+  lengthOfStay    Int
+  numberOfEntries EntryType
+  filingFeeUSD    Int
+
+  @@unique([country, visaType], map: "unique_country_visa_type")
+  @@map("visa_products")
+}
+
+enum EntryType {
+  Single
+  Multiple
+}
+
+enum VisaType {
+  Business
+  Student
+  Tourist
+  Schengen
+}

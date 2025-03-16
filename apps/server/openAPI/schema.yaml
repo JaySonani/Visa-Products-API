@@ -1,0 +1,733 @@
+openapi: 3.0.0
+info:
+  title: Sherpa Backend
+  description: API documentation for Visa Products
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+components:
+  securitySchemes:
+    noauthAuth:
+      type: http
+      scheme: noauth
+paths:
+  /api/visa:
+    get:
+      tags:
+        - default
+      summary: Browse Visa Products
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '1339'
+            ETag:
+              schema:
+                type: string
+                example: W/"53b-WpbAA/TTpy2c7/F9cHz1uz1UVXk"
+            Date:
+              schema:
+                type: string
+                example: Sat, 15 Mar 2025 19:40:59 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: Get all Visa Products
+                  value:
+                    page: 1
+                    limit: 10
+                    totalPages: 6
+                    totalRecords: 52
+                    visas:
+                      - id: 1
+                        country: USA
+                        visaType: Tourist
+                        priceUSD: 160
+                        lengthOfStay: 90
+                        numberOfEntries: Single
+                        filingFeeUSD: 20
+                      - id: 2
+                        country: USA
+                        visaType: Business
+                        priceUSD: 185
+                        lengthOfStay: 180
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 25
+                      - id: 3
+                        country: USA
+                        visaType: Student
+                        priceUSD: 350
+                        lengthOfStay: 730
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 50
+                      - id: 4
+                        country: Canada
+                        visaType: Tourist
+                        priceUSD: 100
+                        lengthOfStay: 180
+                        numberOfEntries: Single
+                        filingFeeUSD: 15
+                      - id: 5
+                        country: Canada
+                        visaType: Business
+                        priceUSD: 150
+                        lengthOfStay: 365
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 30
+                      - id: 6
+                        country: Canada
+                        visaType: Student
+                        priceUSD: 200
+                        lengthOfStay: 1095
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 40
+                      - id: 7
+                        country: UK
+                        visaType: Tourist
+                        priceUSD: 130
+                        lengthOfStay: 180
+                        numberOfEntries: Single
+                        filingFeeUSD: 25
+                      - id: 8
+                        country: UK
+                        visaType: Business
+                        priceUSD: 200
+                        lengthOfStay: 365
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 35
+                      - id: 9
+                        country: UK
+                        visaType: Student
+                        priceUSD: 450
+                        lengthOfStay: 1095
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 55
+                      - id: 10
+                        country: France
+                        visaType: Schengen
+                        priceUSD: 80
+                        lengthOfStay: 90
+                        numberOfEntries: Single
+                        filingFeeUSD: 10
+                example-1:
+                  summary: Filter by Country
+                  value:
+                    page: 1
+                    limit: 10
+                    totalPages: 1
+                    totalRecords: 3
+                    visas:
+                      - id: 4
+                        country: Canada
+                        visaType: Tourist
+                        priceUSD: 100
+                        lengthOfStay: 180
+                        numberOfEntries: Single
+                        filingFeeUSD: 15
+                      - id: 5
+                        country: Canada
+                        visaType: Business
+                        priceUSD: 150
+                        lengthOfStay: 365
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 30
+                      - id: 6
+                        country: Canada
+                        visaType: Student
+                        priceUSD: 200
+                        lengthOfStay: 1095
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 40
+                example-2:
+                  summary: Filter by Visa Type
+                  value:
+                    page: 1
+                    limit: 10
+                    totalPages: 2
+                    totalRecords: 15
+                    visas:
+                      - id: 3
+                        country: USA
+                        visaType: Student
+                        priceUSD: 350
+                        lengthOfStay: 730
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 50
+                      - id: 6
+                        country: Canada
+                        visaType: Student
+                        priceUSD: 200
+                        lengthOfStay: 1095
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 40
+                      - id: 9
+                        country: UK
+                        visaType: Student
+                        priceUSD: 450
+                        lengthOfStay: 1095
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 55
+                      - id: 16
+                        country: Australia
+                        visaType: Student
+                        priceUSD: 620
+                        lengthOfStay: 1095
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 60
+                      - id: 19
+                        country: Japan
+                        visaType: Student
+                        priceUSD: 100
+                        lengthOfStay: 730
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 25
+                      - id: 22
+                        country: China
+                        visaType: Student
+                        priceUSD: 250
+                        lengthOfStay: 1095
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 45
+                      - id: 25
+                        country: India
+                        visaType: Student
+                        priceUSD: 100
+                        lengthOfStay: 365
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 20
+                      - id: 28
+                        country: Brazil
+                        visaType: Student
+                        priceUSD: 200
+                        lengthOfStay: 730
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 35
+                      - id: 31
+                        country: Russia
+                        visaType: Student
+                        priceUSD: 250
+                        lengthOfStay: 1095
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 40
+                      - id: 34
+                        country: UAE
+                        visaType: Student
+                        priceUSD: 250
+                        lengthOfStay: 1095
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 35
+                example-3:
+                  summary: Paginated Response
+                  value:
+                    page: 2
+                    limit: 5
+                    totalPages: 11
+                    totalRecords: 52
+                    visas:
+                      - id: 6
+                        country: Canada
+                        visaType: Student
+                        priceUSD: 200
+                        lengthOfStay: 1095
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 40
+                      - id: 7
+                        country: UK
+                        visaType: Tourist
+                        priceUSD: 130
+                        lengthOfStay: 180
+                        numberOfEntries: Single
+                        filingFeeUSD: 25
+                      - id: 8
+                        country: UK
+                        visaType: Business
+                        priceUSD: 200
+                        lengthOfStay: 365
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 35
+                      - id: 9
+                        country: UK
+                        visaType: Student
+                        priceUSD: 450
+                        lengthOfStay: 1095
+                        numberOfEntries: Multiple
+                        filingFeeUSD: 55
+                      - id: 10
+                        country: France
+                        visaType: Schengen
+                        priceUSD: 80
+                        lengthOfStay: 90
+                        numberOfEntries: Single
+                        filingFeeUSD: 10
+        '400':
+          description: Bad Request
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '146'
+            ETag:
+              schema:
+                type: string
+                example: W/"92-JM3+z+eGXSJcs00RHuhbKiYO/hI"
+            Date:
+              schema:
+                type: string
+                example: Sun, 16 Mar 2025 23:49:30 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: true
+                statusCode: 400
+                errorDetails:
+                  message:
+                    - page must not be less than 1
+                    - page must be an integer number
+                  error: Bad Request
+  /api/visa/13:
+    get:
+      tags:
+        - default
+      summary: Individual Visa Product
+      security:
+        - noauthAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '137'
+            ETag:
+              schema:
+                type: string
+                example: W/"89-usHH9c9fPVi8kTzWj2OKUdoUElI"
+            Date:
+              schema:
+                type: string
+                example: Sat, 15 Mar 2025 19:48:51 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                visa:
+                  id: 13
+                  country: Spain
+                  visaType: Schengen
+                  priceUSD: 88
+                  lengthOfStay: 90
+                  numberOfEntries: Multiple
+                  filingFeeUSD: 13
+        '400':
+          description: Bad Request
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '129'
+            ETag:
+              schema:
+                type: string
+                example: W/"81-mRBiv6BW3P4IfbLyPdQ3NhuhS6Q"
+            Date:
+              schema:
+                type: string
+                example: Sun, 16 Mar 2025 23:42:07 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: true
+                statusCode: 400
+                errorDetails:
+                  message: Validation failed (numeric string is expected)
+                  error: Bad Request
+        '404':
+          description: Not Found
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '131'
+            ETag:
+              schema:
+                type: string
+                example: W/"83-tQKyKorDxa+pZNKnYfL0jSK1W0g"
+            Date:
+              schema:
+                type: string
+                example: Sat, 15 Mar 2025 19:49:04 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: true
+                statusCode: 404
+                errorDetails:
+                  message: Resource not found
+                  error: 'Visa product with id: 1300 does not exist'
+    put:
+      tags:
+        - default
+      summary: Edit Visa Product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                country: Greece
+                visaType: Tourist
+                lengthOfStay: 10
+                priceUSD: 100
+                numberOfEntries: Single
+                filingFeeUSD: 20
+      security:
+        - noauthAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '195'
+            ETag:
+              schema:
+                type: string
+                example: W/"c3-HW+Fz/0LxGBO1+eiBQESmOIDjY0"
+            Date:
+              schema:
+                type: string
+                example: Sat, 15 Mar 2025 20:02:01 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: 'Visa product with id: 13 updated successfully.'
+                visa:
+                  id: 13
+                  country: Greece
+                  visaType: Tourist
+                  priceUSD: 100
+                  lengthOfStay: 10
+                  numberOfEntries: Single
+                  filingFeeUSD: 20
+        '400':
+          description: Bad Request
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '181'
+            ETag:
+              schema:
+                type: string
+                example: W/"b5-jFi1iquHDzc4TN3saPlccYYvdW4"
+            Date:
+              schema:
+                type: string
+                example: Sat, 15 Mar 2025 20:01:26 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: true
+                statusCode: 400
+                errorDetails:
+                  message: >-
+
+                    Invalid `prisma.visaProducts.update()` invocation:
+
+
+
+                    Unique constraint failed on the fields:
+                    (`country`,`visaType`)
+        '404':
+          description: Not Found
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '88'
+            ETag:
+              schema:
+                type: string
+                example: W/"58-Vt+wKYo9CTnc0UDpmoJw48n1h0g"
+            Date:
+              schema:
+                type: string
+                example: Sat, 15 Mar 2025 20:01:07 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: true
+                statusCode: 404
+                errorDetails:
+                  message: Record to update not found.
+  /api/visa/:
+    post:
+      tags:
+        - default
+      summary: Create Visa Product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                visaType: Business
+                lengthOfStay: 10
+                priceUSD: 100
+                numberOfEntries: Single
+                filingFeeUSD: 20
+      responses:
+        '201':
+          description: Created
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '188'
+            ETag:
+              schema:
+                type: string
+                example: W/"bc-z14WfNNegjpSOK25xYUPtdwB008"
+            Date:
+              schema:
+                type: string
+                example: Sat, 15 Mar 2025 19:45:03 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: New visa product created successfully.
+                visa:
+                  id: 78
+                  country: Greece
+                  visaType: Business
+                  priceUSD: 100
+                  lengthOfStay: 10
+                  numberOfEntries: Single
+                  filingFeeUSD: 20
+        '400':
+          description: Bad Request
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '181'
+            ETag:
+              schema:
+                type: string
+                example: W/"b5-/K/fUr1DkYs+LGNTym5vXmK0zp8"
+            Date:
+              schema:
+                type: string
+                example: Sat, 15 Mar 2025 19:45:22 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: Unique Constraint
+                  value:
+                    error: true
+                    statusCode: 400
+                    errorDetails:
+                      message: >-
+
+                        Invalid `prisma.visaProducts.create()` invocation:
+
+
+
+                        Unique constraint failed on the fields:
+                        (`country`,`visaType`)
+                example-1:
+                  summary: Invalid Payload
+                  value:
+                    error: true
+                    statusCode: 400
+                    errorDetails:
+                      message:
+                        - country should not be empty
+                        - country must be a string
+                      error: Bad Request

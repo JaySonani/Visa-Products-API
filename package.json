@@ -2,7 +2,9 @@
   "name": "@joinsherpa/coding-challenge-fullstack",
   "version": "0.0.1",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "test:coverage": "jest --coverage"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~19.1.0",
@@ -14,9 +16,15 @@
     "@angular/platform-browser-dynamic": "~19.1.0",
     "@angular/router": "~19.1.0",
     "@nestjs/common": "^10.0.2",
+    "@nestjs/config": "^4.0.1",
     "@nestjs/core": "^10.0.2",
+    "@nestjs/swagger": "^11.0.6",
     "@nestjs/platform-express": "^10.0.2",
+    "@prisma/client": "^6.5.0",
     "axios": "^1.6.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "express": "^4.21.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~7.8.0",
     "zone.js": "~0.15.0"
@@ -57,6 +65,7 @@
     "jest-preset-angular": "~14.4.0",
     "nx": "20.4.6",
     "prettier": "^2.6.2",
+    "prisma": "^6.5.0",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "tslib": "^2.3.0",
