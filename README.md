@@ -1,7 +1,3 @@
-![sherpa coding challenge banner](docs/fullstack-engineer.png)
-
-# 🌎 Fullstack Engineer Coding Challenge
-
 ## Backend APIs created for:
 
 - Browse all visa products (with pagination and filtering)
